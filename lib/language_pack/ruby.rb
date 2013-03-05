@@ -82,6 +82,7 @@ class LanguagePack::Ruby < LanguagePack::Base
       create_database_yml
       install_binaries
       run_assets_precompile_rake_task
+      puts "DONE WITH ASSETS"
     end
   end
 
