@@ -2,6 +2,7 @@
 
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
+puts "About to release #{ARGV[0]} #{ARGV[1]}"
 
 if pack = LanguagePack.detect(ARGV[0] + '/FPAdmin', ARGV[1])
   puts "About to release"
