@@ -12,5 +12,6 @@ if pack = LanguagePack.detect(ARGV[0] + '/FPAdmin', ARGV[1])
   pack.log("compile") do
     puts "IN Logging block"
     pack.compile
+    puts "DONE compiling"
   end
 end
