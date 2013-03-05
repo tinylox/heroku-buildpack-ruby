@@ -3,8 +3,9 @@
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
 
-if pack = LanguagePack.detect(ARGV.first + "FPAdmin/")
-  puts pack.name + ' ' + ENV
+if pack = LanguagePack.detect(ARGV.first + "/FPAdmin/")
+  env_data = ENV.map{ |k,v| "#{k}:#{v}"}.join(' ')
+  puts "#{pack.name} env #{env_data} "
   exit 0
 else
   puts "no #{ARGV.first}"
