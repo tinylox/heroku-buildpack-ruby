@@ -192,13 +192,18 @@ private
 
   # sets up the environment variables for the build process
   def setup_language_pack_environment
+    puts "Setting up Lang pack env"
     setup_ruby_install_env
-
+  
+    puts "CONFIG_VARS"
     config_vars = default_config_vars.each do |key, value|
       ENV[key] ||= value
     end
+    puts "CONFIG_VARS DONE"
     ENV["GEM_HOME"] = slug_vendor_base
+    puts "SLUG VENDOR BASE DONE"
     ENV["PATH"]     = "#{ruby_install_binstub_path}:#{config_vars["PATH"]}"
+    puts "SET PATH RIGHT"
   end
 
   # sets up the profile.d script for this buildpack
