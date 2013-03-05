@@ -27,6 +27,7 @@ class LanguagePack::Ruby < LanguagePack::Base
 
   def self.lockfile_parser
     require "bundler"
+    puts "TESTING #{Dir.getwd}"
     Bundler::LockfileParser.new(File.read("Gemfile.lock"))
   end
 
