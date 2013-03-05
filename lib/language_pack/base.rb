@@ -22,10 +22,7 @@ class LanguagePack::Base
     @cache_path = cache_path
     @id = Digest::SHA1.hexdigest("#{Time.now.to_f}-#{rand(1000000)}")[0..10]
     
-    puts "The BUILD_PATH #{@build_path}"
-    puts "The dir contents #{Dir.glob(build_path + "*").join(' ')}"
     Dir.chdir build_path
-    puts "The CWD in init #{Dir.getwd}"
   end
 
   def self.===(build_path)
