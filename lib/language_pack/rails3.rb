@@ -18,8 +18,8 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
 
   def default_process_types
     # let's special case thin here
-    web_process = gem_is_bundled?("thin") ?
-                    "bundle exec thin start -R config.ru -e $RAILS_ENV -p $PORT" :
+    web_process = gem_is_bundled?("unicorn") ?
+                    "bundle exec unicorn -p $PORT -c ./config/unicorn.rb" :
                     "bundle exec rails server -p $PORT"
 
     super.merge({
