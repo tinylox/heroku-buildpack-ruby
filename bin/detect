@@ -3,7 +3,7 @@
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
 
-if pack = LanguagePack.detect(ARGV.first + "/FPAdmin/")
+if pack = LanguagePack.detect(ARGV.first + "/FPPublic/")
   puts pack.name
   exit 0
 else
