@@ -71,13 +71,11 @@ class LanguagePack::Base
   def release
     setup_language_pack_environment
 
-   foo = {
+    {
       "addons" => default_addons,
       "default_process_types" => default_process_types
     }.to_yaml
 
-    put "TESTING this is the release YAML: #{foo}"
-    foo
   end
 
   # log output

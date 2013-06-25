@@ -1,13 +1,9 @@
 #!/usr/bin/env ruby
 
-puts "Is this even run?"
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
-$stderr.puts "THE ARGV in release #{ARGV}"
+
 if pack = LanguagePack.detect(ARGV[0] + '/FPPublic', ARGV[1])
-  $stderr.puts "About to release"
-  pack.log("release") do
-    $stderr.puts pack.release
-  end
+  puts pack.release
 end
 
