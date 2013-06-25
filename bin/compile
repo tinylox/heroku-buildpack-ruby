@@ -8,6 +8,7 @@ require "language_pack"
 
 if pack = LanguagePack.detect(ARGV[0] + '/FPPublic', ARGV[1])
   pack.log("compile") do
+    puts "IN COMPILE"
     pack.compile
   end
 end

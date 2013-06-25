@@ -2,6 +2,7 @@
 
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
+puts "THE ARGV in release #{ARGV}"
 if pack = LanguagePack.detect(ARGV[0] + '/FPPublic', ARGV[1])
   puts "About to release"
   pack.log("release") do
